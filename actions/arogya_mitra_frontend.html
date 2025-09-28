@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arogya Mitra - AI Health Assistant</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Using the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for a cleaner look */
+        #messages-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        #messages-container::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        #messages-container::-webkit-scrollbar-thumb {
+            background-color: #94a3b8;
+            border-radius: 10px;
+            border: 3px solid #f1f5f9;
+        }
+        /* Markdown rendering for bold text */
+        strong {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div id="chat-container" class="flex flex-col h-screen max-w-2xl mx-auto bg-white shadow-2xl">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-600 to-blue-500 text-white p-4 flex items-center shadow-md z-10">
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                <!-- Simple SVG logo -->
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+                <h1 class="text-xl font-bold">Arogya Mitra</h1>
+                <p class="text-sm opacity-80">Your AI Health Assistant</p>
+            </div>
+        </header>
+
+        <!-- Messages Container -->
+        <main id="messages-container" class="flex-1 p-6 overflow-y-auto space-y-4 bg-gray-50">
+            <!-- Chat messages will be dynamically added here -->
+        </main>
+        
+        <!-- Typing Indicator -->
+        <div id="typing-indicator" class="hidden p-6 pt-0">
+             <div class="flex items-center justify-start">
+                <div class="bg-gray-200 rounded-lg p-3 max-w-xs flex items-center space-x-1">
+                    <span class="block w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+                    <span class="block w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s;"></span>
+                    <span class="block w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.4s;"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Form -->
+        <footer class="bg-white border-t border-gray-200 p-4">
+            <form id="chat-form" class="flex items-center">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    placeholder="Type your message..." 
+                    autocomplete="off"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                >
+                <button 
+                    type="submit"
+                    class="ml-3 bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-transform transform active:scale-95"
+                >
+                    <!-- Send Icon SVG -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                </button>
+            </form>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const RASA_SERVER_URL = "http://localhost:5005/webhooks/rest/webhook";
+            const SENDER_ID = "user_" + Date.now(); // Unique ID for the user session
+
+            const chatForm = document.getElementById("chat-form");
+            const userInput = document.getElementById("user-input");
+            const messagesContainer = document.getElementById("messages-container");
+            const typingIndicator = document.getElementById("typing-indicator");
+
+            // Function to add a message to the chat window
+            function addMessage(text, sender) {
+                const messageWrapper = document.createElement("div");
+                messageWrapper.className = `flex items-end ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
+                
+                // Simple markdown parsing for **bold** text
+                const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+                const messageBubble = document.createElement("div");
+                messageBubble.innerHTML = formattedText;
+                messageBubble.className = `px-4 py-2 rounded-lg max-w-md md:max-w-lg shadow ${
+                    sender === 'user' 
+                        ? 'bg-blue-500 text-white rounded-br-none' 
+                        : 'bg-gray-200 text-gray-800 rounded-bl-none'
+                }`;
+
+                messageWrapper.appendChild(messageBubble);
+                messagesContainer.appendChild(messageWrapper);
+
+                // Scroll to the bottom
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+            
+            // Function to show/hide typing indicator
+            function showTypingIndicator(show) {
+                typingIndicator.style.display = show ? 'block' : 'none';
+                 if(show) {
+                     messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                 }
+            }
+
+            // Function to send a message to the Rasa server
+            async function sendMessageToRasa(message) {
+                addMessage(message, "user");
+                userInput.value = "";
+                showTypingIndicator(true);
+
+                try {
+                    const response = await fetch(RASA_SERVER_URL, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            sender: SENDER_ID,
+                            message: message,
+                        }),
+                    });
+
+                    const data = await response.json();
+                    
+                    showTypingIndicator(false);
+
+                    if (data && data.length > 0) {
+                        data.forEach(botMessage => {
+                            if (botMessage.text) {
+                                // Add a slight delay for a more natural feel
+                                setTimeout(() => {
+                                    addMessage(botMessage.text, "bot");
+                                }, 500);
+                            }
+                        });
+                    } else {
+                        addMessage("I'm sorry, I'm having trouble connecting right now. Please try again later.", "bot");
+                    }
+
+                } catch (error) {
+                    showTypingIndicator(false);
+                    console.error("Error connecting to Rasa:", error);
+                    addMessage("Error: Could not connect to the AI assistant. Please ensure the server is running.", "bot");
+                }
+            }
+
+            // Handle form submission
+            chatForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+                const message = userInput.value.trim();
+                if (message) {
+                    sendMessageToRasa(message);
+                }
+            });
+
+            // Send an initial greeting to start the conversation
+            sendMessageToRasa("/greet");
+        });
+    </script>
+</body>
+</html>

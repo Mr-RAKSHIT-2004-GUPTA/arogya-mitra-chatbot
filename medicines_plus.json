@@ -1,0 +1,231 @@
+[
+  {
+    "composition_id": "PARA500",
+    "generic_name": "Paracetamol",
+    "strength": "500mg",
+    "brands": [
+      {"brand_name": "Calpol 500", "manufacturer": "GSK", "estimated_mrp": 18, "notes": "JLN Hospital Pharmacy favorite."},
+      {"brand_name": "Dolo 500", "manufacturer": "Micro Labs", "estimated_mrp": 15, "notes": "Popular alternative."},
+      {"brand_name": "Crocin Advance", "manufacturer": "GSK", "estimated_mrp": 20, "notes": "Commonly available."}
+    ]
+  },
+  {
+    "composition_id": "AMOXCLAV625",
+    "generic_name": "Amoxicillin + Clavulanic Acid",
+    "strength": "625mg",
+    "brands": [
+      {"brand_name": "Augmentin 625", "manufacturer": "GSK", "estimated_mrp": 220, "notes": "Often prescribed."},
+      {"brand_name": "Moxikind-CV 625", "manufacturer": "Mankind", "estimated_mrp": 180, "notes": "Cost-effective alternative."},
+      {"brand_name": "Clavam 625", "manufacturer": "Alkem Labs", "estimated_mrp": 190, "notes": "Widely available."}
+    ]
+  },
+  {
+    "composition_id": "AZITH500",
+    "generic_name": "Azithromycin",
+    "strength": "500mg",
+    "brands": [
+      {"brand_name": "Azee 500", "manufacturer": "Cipla", "estimated_mrp": 130, "notes": "Very common antibiotic."},
+      {"brand_name": "Azithral 500", "manufacturer": "Alembic", "estimated_mrp": 135, "notes": "Popular brand."},
+      {"brand_name": "Zithrocin 500", "manufacturer": "Apex Labs", "estimated_mrp": 110, "notes": "Affordable option."}
+    ]
+  },
+  {
+    "composition_id": "PANTO40",
+    "generic_name": "Pantoprazole",
+    "strength": "40mg",
+    "brands": [
+      {"brand_name": "Pantop 40", "manufacturer": "Aristo", "estimated_mrp": 110, "notes": "Leading brand for acidity."},
+      {"brand_name": "Pan 40", "manufacturer": "Alkem", "estimated_mrp": 105, "notes": "JLN Hospital Pharmacy favorite."},
+      {"brand_name": "Pantocid 40", "manufacturer": "Sun Pharma", "estimated_mrp": 115, "notes": "Widely available."}
+    ]
+  },
+  {
+    "composition_id": "CETIR10",
+    "generic_name": "Cetirizine",
+    "strength": "10mg",
+    "brands": [
+      {"brand_name": "Cetzine", "manufacturer": "GSK", "estimated_mrp": 20, "notes": "Common anti-allergy tablet."},
+      {"brand_name": "Allercet", "manufacturer": "Micro Labs", "estimated_mrp": 18, "notes": "Affordable option."}
+    ]
+  },
+  {
+    "composition_id": "METF500",
+    "generic_name": "Metformin",
+    "strength": "500mg",
+    "brands": [
+      {"brand_name": "Glycomet 500", "manufacturer": "USV", "estimated_mrp": 30, "notes": "Leading brand for diabetes."},
+      {"brand_name": "Gluconorm SR 500", "manufacturer": "Lupin", "estimated_mrp": 35, "notes": "Sustained release formula."}
+    ]
+  },
+  {
+    "composition_id": "ATORVA10",
+    "generic_name": "Atorvastatin",
+    "strength": "10mg",
+    "brands": [
+      {"brand_name": "Atorva 10", "manufacturer": "Zydus Cadila", "estimated_mrp": 100, "notes": "Common for cholesterol."},
+      {"brand_name": "Lipitor 10", "manufacturer": "Pfizer", "estimated_mrp": 120, "notes": "Original brand."}
+    ]
+  },
+  {
+    "composition_id": "AMLOD5",
+    "generic_name": "Amlodipine",
+    "strength": "5mg",
+    "brands": [
+      {"brand_name": "Amlong 5", "manufacturer": "Micro Labs", "estimated_mrp": 30, "notes": "For high blood pressure."},
+      {"brand_name": "Amlopres 5", "manufacturer": "Cipla", "estimated_mrp": 35, "notes": "JLN Hospital Pharmacy favorite."}
+    ]
+  },
+  {
+    "composition_id": "IBUPARA",
+    "generic_name": "Ibuprofen + Paracetamol",
+    "strength": "400mg+325mg",
+    "brands": [
+      {"brand_name": "Combiflam", "manufacturer": "Sanofi", "estimated_mrp": 40, "notes": "Very popular painkiller."},
+      {"brand_name": "Flexon", "manufacturer": "Aristo", "estimated_mrp": 35, "notes": "Common alternative."}
+    ]
+  },
+  {
+    "composition_id": "MONTLEVO",
+    "generic_name": "Montelukast + Levocetirizine",
+    "strength": "10mg+5mg",
+    "brands": [
+      {"brand_name": "Montair-LC", "manufacturer": "Cipla", "estimated_mrp": 180, "notes": "For respiratory allergies."},
+      {"brand_name": "Montek LC", "manufacturer": "Sun Pharma", "estimated_mrp": 170, "notes": "Widely prescribed."}
+    ]
+  },
+  {
+    "composition_id": "DOMPER10",
+    "generic_name": "Domperidone",
+    "strength": "10mg",
+    "brands": [
+        {"brand_name": "Domstal", "manufacturer": "Torrent", "estimated_mrp": 25, "notes": "For nausea and vomiting."},
+        {"brand_name": "Vomista", "manufacturer": "Cadila", "estimated_mrp": 22, "notes": "Commonly available."}
+    ]
+  },
+  {
+    "composition_id": "OFLOORNI",
+    "generic_name": "Ofloxacin + Ornidazole",
+    "strength": "200mg+500mg",
+    "brands": [
+        {"brand_name": "Zanocin-OZ", "manufacturer": "Mankind", "estimated_mrp": 120, "notes": "For stomach infections."},
+        {"brand_name": "Ornof-OZ", "manufacturer": "Aristo", "estimated_mrp": 110, "notes": "Popular choice."}
+    ]
+  },
+  {
+    "composition_id": "TELMI40",
+    "generic_name": "Telmisartan",
+    "strength": "40mg",
+    "brands": [
+        {"brand_name": "Telma 40", "manufacturer": "Glenmark", "estimated_mrp": 150, "notes": "For high blood pressure."},
+        {"brand_name": "Cresar 40", "manufacturer": "Cipla", "estimated_mrp": 140, "notes": "Reliable alternative."}
+    ]
+  },
+  {
+    "composition_id": "ROSU10",
+    "generic_name": "Rosuvastatin",
+    "strength": "10mg",
+    "brands": [
+        {"brand_name": "Rosuvas 10", "manufacturer": "Sun Pharma", "estimated_mrp": 160, "notes": "For high cholesterol."},
+        {"brand_name": "Crestor 10", "manufacturer": "AstraZeneca", "estimated_mrp": 200, "notes": "Original brand."}
+    ]
+  },
+  {
+    "composition_id": "VITD3_60K",
+    "generic_name": "Cholecalciferol (Vitamin D3)",
+    "strength": "60000 IU",
+    "brands": [
+        {"brand_name": "Uprise-D3 60K", "manufacturer": "Alkem", "estimated_mrp": 120, "notes": "Weekly vitamin D dose."},
+        {"brand_name": "Calcirol Sachet", "manufacturer": "Cadila", "estimated_mrp": 40, "notes": "Sachet form."}
+    ]
+  },
+  {
+    "composition_id": "DICLO_GEL",
+    "generic_name": "Diclofenac Gel",
+    "strength": "1%",
+    "brands": [
+        {"brand_name": "Volini Gel", "manufacturer": "Sun Pharma", "estimated_mrp": 130, "notes": "Popular pain relief gel."},
+        {"brand_name": "Voveran Gel", "manufacturer": "Novartis", "estimated_mrp": 140, "notes": "Widely used."}
+    ]
+  },
+  {
+    "composition_id": "CIPRO500",
+    "generic_name": "Ciprofloxacin",
+    "strength": "500mg",
+    "brands": [
+        {"brand_name": "Cifran 500", "manufacturer": "Sun Pharma", "estimated_mrp": 50, "notes": "Broad-spectrum antibiotic."},
+        {"brand_name": "Ciplox 500", "manufacturer": "Cipla", "estimated_mrp": 55, "notes": "JLN Hospital Pharmacy favorite."}
+    ]
+  },
+  {
+    "composition_id": "RABE20",
+    "generic_name": "Rabeprazole",
+    "strength": "20mg",
+    "brands": [
+        {"brand_name": "Razo 20", "manufacturer": "Dr. Reddy's", "estimated_mrp": 100, "notes": "For acidity and GERD."},
+        {"brand_name": "Veloz 20", "manufacturer": "Torrent", "estimated_mrp": 95, "notes": "Commonly prescribed."}
+    ]
+  },
+  {
+    "composition_id": "MECO1500",
+    "generic_name": "Methylcobalamin (Vitamin B12)",
+    "strength": "1500mcg",
+    "brands": [
+        {"brand_name": "Nurokind-OD", "manufacturer": "Mankind", "estimated_mrp": 100, "notes": "For nerve health."},
+        {"brand_name": "Meconeuron OD", "manufacturer": "Micro Labs", "estimated_mrp": 90, "notes": "Affordable alternative."}
+    ]
+  },
+  {
+    "composition_id": "FEXO120",
+    "generic_name": "Fexofenadine",
+    "strength": "120mg",
+    "brands": [
+        {"brand_name": "Allegra 120", "manufacturer": "Sanofi", "estimated_mrp": 110, "notes": "Non-drowsy anti-allergy."},
+        {"brand_name": "Fexy 120", "manufacturer": "Lupin", "estimated_mrp": 90, "notes": "Cost-effective choice."}
+    ]
+  },
+  {
+    "composition_id": "GLIMEP2",
+    "generic_name": "Glimepiride",
+    "strength": "2mg",
+    "brands": [
+        {"brand_name": "Amaryl 2", "manufacturer": "Sanofi", "estimated_mrp": 150, "notes": "For Type 2 Diabetes."},
+        {"brand_name": "Glimy 2", "manufacturer": "Dr. Reddy's", "estimated_mrp": 130, "notes": "Popular generic."}
+    ]
+  },
+  {
+    "composition_id": "DOXY100",
+    "generic_name": "Doxycycline",
+    "strength": "100mg",
+    "brands": [
+        {"brand_name": "Doxy-1 L-DR", "manufacturer": "USV", "estimated_mrp": 90, "notes": "Antibiotic for various infections."},
+        {"brand_name": "Microdox-LBX", "manufacturer": "Micro Labs", "estimated_mrp": 85, "notes": "Contains helpful bacteria."}
+    ]
+  },
+  {
+    "composition_id": "LOPER2",
+    "generic_name": "Loperamide",
+    "strength": "2mg",
+    "brands": [
+        {"brand_name": "Imodium", "manufacturer": "Janssen", "estimated_mrp": 25, "notes": "For stopping diarrhoea."},
+        {"brand_name": "Lopamide", "manufacturer": "Torrent", "estimated_mrp": 20, "notes": "Commonly available."}
+    ]
+  },
+  {
+    "composition_id": "IRONFOLIC",
+    "generic_name": "Iron + Folic Acid",
+    "strength": "100mg+1.5mg",
+    "brands": [
+        {"brand_name": "Fefol-Z", "manufacturer": "GSK", "estimated_mrp": 140, "notes": "For anemia and pregnancy."},
+        {"brand_name": "Tonoferon", "manufacturer": "East India", "estimated_mrp": 120, "notes": "Widely prescribed."}
+    ]
+  },
+  {
+    "composition_id": "TRAM50",
+    "generic_name": "Tramadol",
+    "strength": "50mg",
+    "brands": [
+        {"brand_name": "Ultram", "manufacturer": "Janssen", "estimated_mrp": 90, "notes": "For moderate to severe pain."},
+        {"brand_name": "Contramal", "manufacturer": "Abbott", "estimated_mrp": 80, "notes": "Requires prescription."}
+    ]
+  }
+]

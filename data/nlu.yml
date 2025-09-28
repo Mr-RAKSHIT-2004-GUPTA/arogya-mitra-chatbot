@@ -1,0 +1,37 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+
+- intent: get_steel_plant_first_aid
+  examples: |
+    - what to do for a [burn](plant_injury)
+    - first aid for a [chemical burn](plant_injury)
+    - someone got a [cut](plant_injury) from a machine
+    - what if someone inhales [gas](plant_injury)
+    - first aid for [fume inhalation](plant_injury)
+
+- intent: find_affordable_medicine
+  examples: |
+    - find an alternative for [Augmentin 625](medicine_name)
+    - what are the options for [Calpol 500](medicine_name)
+    - cheaper medicine for [Atorva 10](medicine_name)
+    - show me alternatives for [Telma 40](medicine_name)
+    - find affordable medicine
+    - I want to know about a medicine
+
+- intent: check_symptom
+  examples: |
+    - I have a [fever](symptom)
+    - I am suffering from [headache](symptom) and [fatigue](symptom)
+    - my symptoms are [cough](symptom) and [sore throat](symptom)

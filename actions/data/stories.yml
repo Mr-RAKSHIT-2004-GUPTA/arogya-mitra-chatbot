@@ -1,0 +1,27 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: symptom check path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: check_symptom
+  - action: utter_ask_symptoms
+
+- story: find affordable medicine path
+  steps:
+  - intent: find_affordable_medicine
+  - action: action_find_affordable_medicine
+
+- story: provide steel plant first aid
+  steps:
+  - intent: get_steel_plant_first_aid
+  - action: action_provide_plant_first_aid

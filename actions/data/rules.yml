@@ -1,0 +1,20 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Respond to steel plant first aid questions
+  steps:
+  - intent: get_steel_plant_first_aid
+  - action: action_provide_plant_first_aid # We will create this action next
+
+# You can add other rules here later, for example:
+# - rule: Respond to bot challenge
+#   steps:
+#   - intent: bot_challenge
+#   - action: utter_iamabot
+# (But you would need to define the intent and utter_iamabot first)

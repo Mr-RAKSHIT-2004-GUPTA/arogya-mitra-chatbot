@@ -1,0 +1,40 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - get_steel_plant_first_aid
+  - find_affordable_medicine
+  - check_symptom
+
+entities:
+  - plant_injury
+  - medicine_name # New entity
+  - symptom
+
+responses:
+  utter_greet:
+  - text: "Hello! I am Arogya Mitra, your AI health assistant. \n\n**DISCLAIMER:** I am not a doctor. Please consult a qualified medical professional for any health concerns."
+
+  utter_goodbye:
+  - text: "Goodbye! Stay safe and healthy."
+  
+  utter_ask_symptoms:
+  - text: "I'm sorry to hear that. Can you please list all of your symptoms?"
+
+  utter_first_aid_burn:
+  - text: "For a burn, immediate action is critical. \n\n1. **MOVE TO SAFETY:** Get the person away from the source of the burn. \n2. **COOL WATER:** Flush the area with cool (not cold) running water for at least 15-20 minutes. \n3. **COVER:** Use a sterile, non-stick bandage or a clean cloth to cover the burn. \n\n**SEEK IMMEDIATE MEDICAL HELP** if the burn is large, on the face/hands/joints, or looks charred or white."
+
+  utter_first_aid_cut:
+  - text: "For a minor cut, follow these steps: \n\n1. **APPLY PRESSURE:** Use a clean cloth to apply firm, direct pressure to the wound to stop the bleeding. \n2. **CLEAN WOUND:** Once bleeding stops, gently rinse the wound with clean water. \n3. **COVER:** Apply an antiseptic and cover with a sterile bandage. \n\n**SEEK IMMEDIATE MEDICAL HELP** if the bleeding won't stop, the cut is deep or gaping, or it was caused by a rusty/dirty object."
+
+  utter_first_aid_gas:
+  - text: "For gas or fume inhalation, the priority is fresh air. \n\n1. **MOVE TO FRESH AIR:** Immediately move the person to an open area with clean, fresh air. \n2. **CALL FOR HELP:** Alert your supervisor and the plant's medical team right away. \n3. **CHECK BREATHING:** If the person is unconscious, check for breathing. Be prepared to start CPR if you are trained. \n\n**IMPORTANT:** All cases of gas inhalation require a professional medical evaluation, even if the person feels better. Do not let them go back to work."
+
+actions:
+  - action_provide_plant_first_aid
+  - action_find_affordable_medicine # New custom action
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

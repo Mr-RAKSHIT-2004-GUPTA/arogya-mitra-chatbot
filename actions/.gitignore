@@ -1,0 +1,8 @@
+# Rasa generated files
+models/
+.rasa/
+
+# Python virtual environment & caches
+arogya_mitra_env/
+__pycache__/
+*.pyc
